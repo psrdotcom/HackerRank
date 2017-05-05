@@ -18,7 +18,9 @@ public class DijkstraShortestRoute2 {
 				int r = in.nextInt(); // Weight
 				weight_matrix[x - 1][y - 1] = r;
 			}
+
 			int s = in.nextInt(); // Starting Edge
+
 			// Validate starting edge
 			if (s > n) {
 				System.out.println("Invalid starting edge");
@@ -31,11 +33,16 @@ public class DijkstraShortestRoute2 {
 
 			// Get the direct distances of the selected source
 			int dist[] = new int[n];
-			for (int i = 0; i < weight_matrix[s].length; i++) {
-				dist[i] = weight_matrix[s][i];
+			for (int i = 0; i < weight_matrix.length; i++) {
+				for (int j = 0; j < weight_matrix[i].length; j++) {
+					if(weight_matrix[i][j] > 0 && (dist[((i+j)%i)] > weight_matrix[i][j]) ) {
+						dist[((i+j)%i)] = weight_matrix[i][j];
+					}
+				}
 			}
 
 			printDistancesFromSource(dist);
+
 		}
 
 		in.close();

@@ -1,4 +1,4 @@
-package in.pillisureshraju.algorithms.hackerrank;
+package in.pillisureshraju.hackerrank.algorithms;
 
 import java.util.Scanner;
 

@@ -140,12 +140,13 @@ public class JavaVisitorPattern {
         tree = new TreeNode(0, Color.RED, 0);
         return tree;
     }
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         Tree root = solve();
-	SumInLeavesVisitor vis1 = new SumInLeavesVisitor();
+        SumInLeavesVisitor vis1 = new SumInLeavesVisitor();
       	ProductOfRedNodesVisitor vis2 = new ProductOfRedNodesVisitor();
       	FancyVisitor vis3 = new FancyVisitor();
 
